@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>A Little Place For Anu 🐰❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --red:#9e1f32;
+  --dark:#681525;
+  --cream:#fff7ec;
+  --pink:#f6d6d8;
+  --soft:#fff0e8;
+  --text:#4a2529;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:"DM Sans",sans-serif;
+  background:
+    radial-gradient(circle at 20% 10%,#fff 0 2px,transparent 3px),
+    radial-gradient(circle at 80% 30%,#fff 0 1.5px,transparent 3px),
+    linear-gradient(135deg,#7e172b,#b52c43 45%,#8d1830);
+  background-size:90px 90px,130px 130px,100% 100%;
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(#fff3 1px,transparent 1px);
+  background-size:25px 25px;
+  opacity:.25;
+}
+
+/* FLOATING BACKGROUND */
+
+.float-heart{
+  position:fixed;
+  bottom:-40px;
+  color:#fff;
+  opacity:.5;
+  pointer-events:none;
+  animation:rise linear forwards;
+  z-index:1;
+}
+
+@keyframes rise{
+  to{
+    transform:translateY(-115vh) rotate(25deg);
+    opacity:0;
+  }
+}
+
+/* MAIN */
+
+.page{
+  width:min(1050px,92%);
+  margin:auto;
+  position:relative;
+  z-index:2;
+}
+
+section{
+  min-height:100vh;
+  padding:80px 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card{
+  background:rgba(255,247,236,.96);
+  border:2px solid rgba(255,255,255,.7);
+  border-radius:34px;
+  padding:55px;
+  width:100%;
+  box-shadow:0 25px 70px #39091555;
+  position:relative;
+  overflow:hidden;
+}
+
+.card:after{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:#f4c9ca;
+  opacity:.25;
+  right:-70px;
+  top:-70px;
+}
+
+.small{
+  font-size:14px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#a24a57;
+  font-weight:700;
+}
+
+h1,h2{
+  font-family:"Playfair Display",serif;
+}
+
+h1{
+  font-size:clamp(48px,8vw,92px);
+  line-height:.95;
+  color:#fff8ef;
+  text-align:center;
+}
+
+h2{
+  font-size:clamp(35px,5vw,58px);
+  color:var(--red);
+  margin:10px 0 20px;
+}
+
+p{
+  font-size:17px;
+  line-height:1.8;
+}
+
+/* BUNNY */
+
+.bunny{
+  width:170px;
+  height:160px;
+  position:relative;
+  margin:0 auto 30px;
+  animation:bounce 3s ease-in-out infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-9px)}
+}
+
+.ear{
+  position:absolute;
+  width:45px;
+  height:90px;
+  background:#fffaf2;
+  border-radius:50% 50% 42% 42%;
+  top:-35px;
+  box-shadow:inset 0 -5px #f1c5c8;
+}
+
+.ear.left{left:27px;transform:rotate(-10deg)}
+.ear.right{right:27px;transform:rotate(10deg)}
+
+.face{
+  position:absolute;
+  width:145px;
+  height:120px;
+  background:#fffaf2;
+  border-radius:48% 48% 44% 44%;
+  left:12px;
+  top:30px;
+  box-shadow:0 8px 20px #54102118;
+}
+
+.eye{
+  position:absolute;
+  width:10px;
+  height:13px;
+  border-radius:50%;
+  background:#4a2529;
+  top:47px;
+}
+
+.eye.left{left:42px}
+.eye.right{right:42px}
+
+.blush{
+  position:absolute;
+  width:24px;
+  height:11px;
+  background:#f2aeb4;
+  border-radius:50%;
+  top:67px;
+  opacity:.65;
+}
+
+.blush.left{left:20px}
+.blush.right{right:20px}
+
+.nose{
+  position:absolute;
+  left:66px;
+  top:65px;
+  width:13px;
+  height:10px;
+  background:#c85b69;
+  border-radius:50%;
+}
+
+.mouth{
+  position:absolute;
+  left:63px;
+  top:76px;
+  width:19px;
+  height:10px;
+  border-bottom:2px solid #673039;
+  border-radius:50%;
+}
+
+/* HERO */
+
+.hero{
+  text-align:center;
+  min-height:100vh;
+  flex-direction:column;
+}
+
+.hero-sub{
+  color:#ffe9df;
+  max-width:600px;
+  margin:25px auto;
+  font-size:19px;
+  line-height:1.7;
+}
+
+button{
+  border:none;
+  cursor:pointer;
+  font-family:inherit;
+  font-weight:700;
+  transition:.25s;
+}
+
+.main-btn{
+  background:#fff7ec;
+  color:#8f1d32;
+  padding:16px 28px;
+  border-radius:999px;
+  font-size:16px;
+  box-shadow:0 12px 30px #39091540;
+}
+
+.main-btn:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+
+/* LETTER */
+
+.letter{
+  background:#fffaf3;
+  border-left:6px solid #a52238;
+  padding:30px;
+  border-radius:18px;
+  margin-top:25px;
+}
+
+.letter p{
+  margin-bottom:18px;
+}
+
+.signature{
+  font-family:"Playfair Display",serif;
+  font-size:26px;
+  color:#9c2036;
+}
+
+/* BUTTON GRID */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:16px;
+  margin-top:30px;
+}
+
+.action{
+  background:#fff;
+  border:2px solid #f0d0d0;
+  border-radius:22px;
+  padding:25px 18px;
+  color:#64252e;
+  min-height:120px;
+}
+
+.action:hover{
+  transform:translateY(-6px) rotate(-1deg);
+  box-shadow:0 12px 25px #7d263020;
+}
+
+.action span{
+  font-size:32px;
+  display:block;
+  margin-bottom:8px;
+}
+
+/* POPUP */
+
+.popup{
+  position:fixed;
+  inset:0;
+  background:#300811aa;
+  backdrop-filter:blur(8px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:100;
+  padding:20px;
+}
+
+.popup.show{display:flex}
+
+.popup-box{
+  background:#fff8ef;
+  width:min(520px,95%);
+  border-radius:30px;
+  padding:40px;
+  text-align:center;
+  animation:pop .35s ease;
+  box-shadow:0 30px 80px #21050b66;
+}
+
+@keyframes pop{
+  from{transform:scale(.7);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+.popup-box h3{
+  font-family:"Playfair Display",serif;
+  color:#9e1f32;
+  font-size:35px;
+  margin-bottom:15px;
+}
+
+.close{
+  margin-top:25px;
+  padding:12px 22px;
+  border-radius:999px;
+  background:#9e1f32;
+  color:white;
+}
+
+/* BUNNY ROOM */
+
+.room{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:30px;
+}
+
+.room-card{
+  min-height:220px;
+  background:#fff;
+  border-radius:25px;
+  padding:25px;
+  position:relative;
+  overflow:hidden;
+}
+
+.room-card h3{
+  color:#9e1f32;
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.mini-bunny{
+  position:absolute;
+  bottom:-25px;
+  right:20px;
+  font-size:70px;
+  animation:bunnyhop 2s infinite;
+}
+
+@keyframes bunnyhop{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
+}
+
+/* REASONS */
+
+.reason{
+  text-align:center;
+  background:#fff;
+  border-radius:25px;
+  padding:35px;
+  margin-top:25px;
+  min-height:130px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:"Playfair Display",serif;
+  font-size:25px;
+  color:#7d2634;
+}
+
+/* FINAL */
+
+.final{
+  text-align:center;
+}
+
+.final h2{
+  color:#fff4eb;
+}
+
+.final p{
+  color:#ffece3;
+  max-width:650px;
+  margin:auto;
+}
+
+.big-heart{
+  font-size:90px;
+  display:block;
+  animation:heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat{
+  0%,100%{transform:scale(1)}
+  15%{transform:scale(1.15)}
+  30%{transform:scale(1)}
+}
+
+/* RESPONSIVE */
+
+@media(max-width:650px){
+  .card{padding:30px 22px}
+  .room{grid-template-columns:1fr}
+  h1{font-size:55px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="floating"></div>
+
+<div class="page">
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="bunny">
+    <div class="ear left"></div>
+    <div class="ear right"></div>
+    <div class="face">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <div class="blush left"></div>
+      <div class="blush right"></div>
+      <div class="nose"></div>
+      <div class="mouth"></div>
+    </div>
+  </div>
+
+  <div class="small" style="color:#ffd9d0">a tiny place made for you</div>
+
+  <h1>hey, Anu.</h1>
+
+  <p class="hero-sub">
+    I know things feel a little too much right now.
+    So I made you somewhere you don't have to do anything.
+    You can just… be here for a while. 🐰
+  </p>
+
+  <button class="main-btn" onclick="goTo('hello')">
+    come sit with me ♡
+  </button>
+
+</section>
+
+
+<!-- HELLO -->
+<section id="hello">
+
+<div class="card">
+
+  <div class="small">first things first</div>
+  <h2>No fixing today.</h2>
+
+  <div class="letter">
+
+    <p>
+      Anu, you don't have to figure everything out right now.
+      You don't have to suddenly feel okay either.
+    </p>
+
+    <p>
+      If today feels weird, heavy, confusing, exhausting,
+      or you don't even know what you're feeling…
+      that's okay.
+    </p>
+
+    <p>
+      I just wanted to make you a tiny corner where nobody is
+      asking you to explain yourself.
+    </p>
+
+    <p>
+      So take your time here.
+      Click things. Ignore things. Laugh at the stupid bunny.
+      Do absolutely nothing if that's what you want.
+    </p>
+
+    <p class="signature">— someone who really cares about you ♡</p>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- INTERACTIVE -->
+<section>
+
+<div class="card">
+
+  <div class="small">bunny emergency department</div>
+  <h2>Pick whatever you need.</h2>
+
+  <p>
+    No serious decisions. Just buttons.
+    The bunny has absolutely no idea what he's doing.
+  </p>
+
+  <div class="grid">
+
+    <button class="action" onclick="note('hug')">
+      <span>🫂</span>
+      I need a hug
+    </button>
+
+    <button class="action" onclick="note('cry')">
+      <span>🥺</span>
+      I wanna cry
+    </button>
+
+    <button class="action" onclick="note('smile')">
+      <span>🐰</span>
+      Make me smile
+    </button>
+
+    <button class="action" onclick="note('quiet')">
+      <span>🌙</span>
+      I need quiet
+    </button>
+
+    <button class="action" onclick="note('love')">
+      <span>💌</span>
+      Give me a note
+    </button>
+
+    <button class="action" onclick="note('silly')">
+      <span>😭</span>
+      Distract me
+    </button>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- LITTLE ROOM -->
+<section>
+
+<div class="card">
+
+  <div class="small">the bunny's room</div>
+  <h2>Things you can do here.</h2>
+
+  <div class="room">
+
+    <div class="room-card">
+      <h3>☕ Take a tiny break</h3>
+      <p>
+        Imagine putting everything down for five minutes.
+        No solving. No thinking ten steps ahead.
+        Just a little pause.
+      </p>
+      <div class="mini-bunny">🐰</div>
+    </div>
+
+    <div class="room-card">
+      <h3>🎀 Read something nice</h3>
+      <p>
+        You don't have to earn kindness by having a good day.
+        You deserve it on the messy ones too.
+      </p>
+      <div class="mini-bunny">🎀🐰</div>
+    </div>
+
+    <div class="room-card">
+      <h3>😂 Enter the stupid zone</h3>
+      <p>
+        This is a judgement-free area for terrible jokes,
+        random thoughts and absolutely unnecessary bunny behaviour.
+      </p>
+      <div class="mini-bunny">🐇</div>
+    </div>
+
+    <div class="room-card">
+      <h3>🌷 Remember this</h3>
+      <p>
+        A bad moment isn't a description of you.
+        You are still you underneath all of this.
+      </p>
+      <div class="mini-bunny">🌷🐰</div>
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- RANDOM NOTES -->
+<section>
+
+<div class="card">
+
+  <div class="small">tiny reminders</div>
+  <h2>Things I want you to remember.</h2>
+
+  <p style="text-align:center">
+    Press the button whenever you want a random one.
+  </p>
+
+  <div class="reason" id="reason">
+    Maybe this one is for you today.
+  </div>
+
+  <div style="text-align:center;margin-top:20px">
+    <button class="main-btn" onclick="newReason()">
+      another one 🐰
+    </button>
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+<section class="final">
+
+  <div>
+    <span class="big-heart">❤️</span>
+
+    <div class="small" style="color:#ffd9d0">
+      one last thing
+    </div>
+
+    <h2>Stay a little longer.</h2>
+
+    <p>
+      You don't have to reply to this website.
+      You don't have to tell me what happened.
+      You don't have to pretend that you're suddenly okay.
+    </p>
+
+    <br>
+
+    <p>
+      I just wanted to make you a little place where
+      everything could feel softer for a few minutes.
+    </p>
+
+    <br>
+
+    <p>
+      And if today is still difficult after this,
+      that's okay too.
+      Tomorrow doesn't have to be perfect either.
+      We'll just take things one little step at a time. 🫂
+    </p>
+
+    <br><br>
+
+    <button class="main-btn" onclick="hug()">
+      one more hug? 🫂
+    </button>
+
+  </div>
+
+</section>
+
+</div>
+
+
+<!-- POPUP -->
+
+<div class="popup" id="popup" onclick="closePopup(event)">
+  <div class="popup-box">
+
+    <div style="font-size:65px" id="popupEmoji">🐰</div>
+
+    <h3 id="popupTitle">come here</h3>
+
+    <p id="popupText"></p>
+
+    <button class="close" onclick="closePopup()">
+      okay ♡
+    </button>
+
+  </div>
+</div>
+
+
+<script>
+
+const notes = {
+
+hug:[
+["come here 🫂","No big speech. No advice. Just a really long virtual hug. Stay here for a second, okay?"],
+["bunny hug deployed 🐰","The bunny has been instructed to sit next to you until further notice."],
+["tiny reminder","You don't have to say anything. Just imagine someone sitting beside you and letting you breathe."]
+],
+
+cry:[
+["it's okay","You don't have to stop yourself from feeling something just because it's uncomfortable."],
+["take your time","You can cry. You can be quiet. You can take a break. Nothing needs to be solved this exact second."],
+["bunny protocol","Bunny has brought tissues. Bunny is also crying a little. He is not very emotionally qualified."]
+],
+
+smile:[
+["important announcement 🚨","A bunny has just fallen over while trying to look cool."],
+["breaking news","Local bunny has discovered that he has absolutely no idea what he's doing."],
+["scientific fact","Looking at a tiny bunny has been scientifically proven by absolutely nobody to improve everything by at least 0.0001%."]
+],
+
+quiet:[
+["shhh 🌙","No need to talk. Just stay here for a bit. Let your brain be quiet."],
+["tiny pause","Everything else can wait for a little while."],
+["soft mode","No questions. No expectations. Just a little peaceful corner."]
+],
+
+love:[
+["hey.","Whatever you're feeling today doesn't make you any less worthy of being cared about."],
+["remember this","You don't have to be happy all the time for people to enjoy having you around."],
+["just because","I made this because sometimes a person doesn't need a solution. They just need to know someone thought about them."]
+],
+
+silly:[
+["urgent bunny business","The bunny has requested that you stop being sad immediately because he has prepared absolutely nothing."],
+["oops","This button was supposed to summon a professional comedian. Unfortunately, it summoned a bunny."],
+["breaking character","🐰 ...I forgot what I was going to say."],
+]
+
+};
+
+function note(type){
+
+  const list=notes[type];
+  const item=list[Math.floor(Math.random()*list.length)];
+
+  document.getElementById("popupEmoji").textContent=
+    type==="hug"?"🫂":
+    type==="cry"?"🥺":
+    type==="smile"?"🐰":
+    type==="quiet"?"🌙":
+    type==="love"?"💌":"😭";
+
+  document.getElementById("popupTitle").textContent=item[0];
+  document.getElementById("popupText").textContent=item[1];
+
+  document.getElementById("popup").classList.add("show");
+}
+
+function closePopup(e){
+  if(!e || e.target.id==="popup"){
+    document.getElementById("popup").classList.remove("show");
+  }
+}
+
+function hug(){
+
+  document.getElementById("popupEmoji").textContent="🫂";
+  document.getElementById("popupTitle").textContent="come here, Anu";
+  document.getElementById("popupText").textContent=
+  "No fixing. No explaining. Just one very long virtual hug. 🫂❤️ Stay as long as you need.";
+
+  document.getElementById("popup").classList.add("show");
+
+  for(let i=0;i<25;i++) createHeart();
+}
+
+const reasons=[
+
+"You're allowed to have difficult days.",
+
+"You don't have to make sense of every feeling immediately.",
+
+"Being tired doesn't mean you're weak.",
+
+"You are more than whatever is bothering you tonight.",
+
+"You don't need to apologise for needing a little time.",
+
+"Some days are just meant to be taken slowly.",
+
+"You can take a breath before dealing with everything else.",
+
+"You're still you, even on the days when you don't feel like yourself.",
+
+"One difficult moment doesn't get to define your whole day.",
+
+"You deserve softness too.",
+
+"Nobody expects you to have everything figured out.",
+
+"You don't have to carry every thought at once.",
+
+"Sometimes doing nothing for a while is completely okay.",
+
+"You matter even when you're not doing anything impressive.",
+
+"Tomorrow can be dealt with tomorrow."
+
+];
+
+function newReason(){
+
+  const box=document.getElementById("reason");
+
+  box.style.opacity=0;
+
+  setTimeout(()=>{
+
+    box.textContent=
+      reasons[Math.floor(Math.random()*reasons.length)];
+
+    box.style.opacity=1;
+
+  },250);
+
+}
+
+function goTo(id){
+
+  document.getElementById(id).scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+function createHeart(){
+
+  const h=document.createElement("div");
+
+  h.className="float-heart";
+
+  h.textContent=["♡","♥","❤","✦","🐰"][Math.floor(Math.random()*5)];
+
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(12+Math.random()*22)+"px";
+  h.style.animationDuration=(5+Math.random()*6)+"s";
+
+  document.getElementById("floating").appendChild(h);
+
+  setTimeout(()=>h.remove(),12000);
+}
+
+setInterval(createHeart,700);
+
+</script>
+
+</body>
+</html>
